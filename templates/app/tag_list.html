@@ -1,8 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Tags <a href="{% url "app:tag-create" %}" class="btn btn-primary">Add</a></h1>
+  <h1>Tags <a href="{% url "app:tag-create" %}" class="btn btn-primary link-to-page">Add</a></h1>
+  <br>
   <table class="table">
-    <tr>
+    <tr class="table-header">
       <th>Name</th>
       <th>Update</th>
       <th>Delete</th>

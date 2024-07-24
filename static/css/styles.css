@@ -1,3 +1,7 @@
+body {
+  padding: 20px;
+}
+
 .not_done {
   color: red;
   font-weight: bold;
@@ -19,3 +23,15 @@
   width: 150px;
   font-size: 24px;
 }
+
+.deadline {
+  color: #710e38;
+}
+
+.table-header {
+  color: white;
+  background-color: gray;
+  font-weight: bold;
+  font-size: 18px;
+}
+

@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>TODO list <a href="{% url "app:task-create" %}" class="btn btn-primary">Add task</a></h1>
+  <h1><strong>TODO list </strong><a href="{% url "app:task-create" %}" class="btn btn-primary link-to-page">Add task</a></h1>
+  <br>
   {% for task in tasks %}
     <h3>
       {{ task.content }}
@@ -16,7 +17,12 @@
         <a href="{% url "app:task-change-status" pk=task.id %}" class="btn btn-success link-to-page">Complete</a>
       {% endif %}
     </h3>
-    <p>Created: {{ task.created }}</p>
+    <p>
+      Created: {{ task.created }}
+      {% if task.deadline %}
+        <label class="deadline">Deadline: {{ task.deadline }}</label>
+      {% endif %}
+    </p>
     <h3 class="tags">
       Tags: 
       {% for tag in task.tags.all %}
@@ -25,5 +31,6 @@
     <a href="{% url "app:task-update" pk=task.id %}">Update</a>
     <a href="{% url "app:task-delete" pk=task.id %}">Delete</a>
     </h3>
+    <hr class="hr"/>
   {% endfor %}
 {% endblock %}
