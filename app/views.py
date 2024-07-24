@@ -1,3 +1,7 @@
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
+from django.urls import reverse
 
-# Create your views here.
+
+def index(request: HttpRequest) -> HttpResponse:
+    return render(request, "app/index.html")
