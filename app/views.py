@@ -7,7 +7,7 @@ from app.models import Task, Tag
 
 
 def index(request: HttpRequest) -> HttpResponse:
-    tasks = Task.objects.prefetch_related("tag")
+    tasks = Task.objects.prefetch_related("tags")
     context = {
         "tasks": tasks
     }
