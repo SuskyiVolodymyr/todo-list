@@ -11,7 +11,7 @@
       <tr>
         <th>{{ tag.name }}</th>
         <th><a href="{% url "app:tag-update" pk=tag.id %}" class="btn btn-dark">Update</a></th>
-        <th><a href="#" class="btn btn-dark">Delete</a></th>
+        <th><a href="{% url "app:tag-delete" pk=tag.id %}" class="btn btn-dark">Delete</a></th>
       </tr>
     {% endfor %}
   </table>
