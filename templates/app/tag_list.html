@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-  <h1>Tags <a href="{% url "app:tag-create" %}">Add</a></h1>
+  <h1>Tags <a href="{% url "app:tag-create" %}" class="btn btn-primary">Add</a></h1>
   <table class="table">
     <tr>
       <th>Name</th>
@@ -10,8 +10,8 @@
     {% for tag in tag_list %}
       <tr>
         <th>{{ tag.name }}</th>
-        <th><a href="#">Update</a></th>
-        <th><a href="#">Delete</a></th>
+        <th><a href="{% url "app:tag-update" pk=tag.id %}" class="btn btn-dark">Update</a></th>
+        <th><a href="#" class="btn btn-dark">Delete</a></th>
       </tr>
     {% endfor %}
   </table>
