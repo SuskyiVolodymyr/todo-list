@@ -2,11 +2,18 @@
 {% block content %}
   <h1>TODO list <a href="{% url "app:task-create" %}" class="btn btn-primary">Add task</a></h1>
   {% for task in tasks %}
-    <h3>{{ task.content }}
+    <h3>
+      {{ task.content }}
+      
       {% if task.is_done %}
         <label class="done">Done</label>
       {% else %}
         <label class="not_done">Not done</label>
+      {% endif %}
+      {% if task.is_done %}
+        <a href="{% url "app:task-change-status" pk=task.id %}" class="btn btn-dark link-to-page">Undo</a>
+      {% else %}
+        <a href="{% url "app:task-change-status" pk=task.id %}" class="btn btn-success link-to-page">Complete</a>
       {% endif %}
     </h3>
     <p>Created: {{ task.created }}</p>
