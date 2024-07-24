@@ -4,12 +4,17 @@
   {% for task in tasks %}
     <h3>{{ task.content }}
       {% if task.is_done %}
-        <label>Done</label>
+        <label class="done">Done</label>
       {% else %}
-        <label>Not done</label>
+        <label class="not_done">Not done</label>
       {% endif %}
     </h3>
     <p>Created: {{ task.created }}</p>
-    <h3>Tags: {% for tag in task.tags.all %}{{ tag }}{% endfor %}</h3>
+    <h3 class="tags">
+      Tags: 
+      {% for tag in task.tags.all %}
+        <a href="{% url "app:tag-update" pk=tag.id %}">{{ tag }}</a>
+      {% endfor %}
+    </h3>
   {% endfor %}
 {% endblock %}

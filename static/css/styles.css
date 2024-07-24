@@ -1,0 +1,13 @@
+.not_done {
+  color: red;
+  font-weight: bold;
+}
+
+.done {
+  color: green;
+  font-weight: bold;
+}
+
+.tags {
+  color: gray;
+}
