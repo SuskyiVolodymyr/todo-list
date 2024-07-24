@@ -1,4 +1,8 @@
-from django.http import HttpRequest, HttpResponse, HttpResponseRedirect
+from django.http import (
+    HttpRequest,
+    HttpResponse,
+    HttpResponseRedirect
+)
 from django.shortcuts import render
 from django.urls import reverse_lazy
 from django.views import generic
@@ -61,4 +65,3 @@ def change_status(request: HttpRequest, pk: int) -> HttpResponse:
             "HTTP_REFERER",
             reverse_lazy("app:index")
         ))
-
