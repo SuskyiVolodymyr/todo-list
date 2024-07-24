@@ -1,0 +1,36 @@
+body {
+  padding: 20px;
+}
+
+.not_done {
+  color: red;
+  font-weight: bold;
+}
+
+.done {
+  color: green;
+  font-weight: bold;
+}
+
+.tags {
+  color: gray;
+}
+
+.link-to-page {
+  float: right;
+  margin: 0 2px 0 2px;
+  height: 50px;
+  width: 150px;
+  font-size: 24px;
+}
+
+.deadline {
+  color: #710e38;
+}
+
+.table-header {
+  color: white;
+  background-color: gray;
+  font-weight: bold;
+  font-size: 18px;
+}
